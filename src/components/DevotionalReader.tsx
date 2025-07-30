@@ -27,7 +27,7 @@ const DevocionalReader: React.FC = () => {
   }
 
   return (
-    <div className="p-4 md:p-6 lg:p-8">
+    <div className="p-4 md:p-6 lg:p-8 bg-green-100">
       <div className="flex items-center justify-between mb-4 bg-white p-2 rounded-md">
         <h3 className="text-xl md:text-2xl font-bold text-black flex items-center">
           <Book className="w-5 h-5 md:w-6 md:h-6 mr-2 text-green-600" />
@@ -53,7 +53,7 @@ const DevocionalReader: React.FC = () => {
             {currentDevotional.title}
           </h4>
 
-          <div className="bg-green-100 border-l-4 border-green-500 p-3 mb-3 rounded-r-lg">
+          <div className="bg-white border-l-4 border-green-500 p-3 mb-3 rounded-r-lg">
             <p className="text-black font-medium text-justify">
               {currentDevotional.text}
             </p>
@@ -70,7 +70,7 @@ const DevocionalReader: React.FC = () => {
         </div>
 
         <div className="text-center mt-4">
-          <p className="text-xs text-green-600 italic">
+          <p className="text-sm text-green-600 italic">
             "A sabedoria consiste em conhecer o Senhor e aplicar seus princípios
             em nossa vida."
           </p>
