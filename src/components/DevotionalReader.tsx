@@ -1,6 +1,7 @@
 import React from "react";
 import { useDevotional } from "@/hooks/useDevotional";
 import { RefreshCw, Calendar, Book, User } from "lucide-react";
+import { format } from "date-fns";
 
 const DevocionalReader: React.FC = () => {
   const { currentDevotional, isLoading, refreshDevotional } = useDevotional();
@@ -45,7 +46,7 @@ const DevocionalReader: React.FC = () => {
       <div className="space-y-4">
         <div className="flex items-center text-sm font-medium bg-green-100 p-2 rounded-md">
           <Calendar className="w-4 h-4 mr-2 text-black" />
-          <span className="text-black">{currentDevotional.date}</span>
+          <span className="text-black">{format(new Date(), "dd/MM/yyyy")}</span>
         </div>
 
         <div>
