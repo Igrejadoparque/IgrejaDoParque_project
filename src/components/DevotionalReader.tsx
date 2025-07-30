@@ -30,7 +30,7 @@ const DevocionalReader: React.FC = () => {
     <div className="p-4 md:p-6 lg:p-8">
       <div className="flex items-center justify-between mb-4 bg-white p-2 rounded-md">
         <h3 className="text-xl md:text-2xl font-bold text-black flex items-center">
-          <Book className="w-5 h-5 md:w-6 md:h-6 mr-2" />
+          <Book className="w-5 h-5 md:w-6 md:h-6 mr-2 text-green-600" />
           Devocional Diário
         </h3>
         <button
@@ -43,8 +43,8 @@ const DevocionalReader: React.FC = () => {
       </div>
 
       <div className="space-y-4">
-        <div className="flex items-center text-sm font-medium bg-green-200 p-2 rounded-md">
-          <Calendar className="w-4 h-4 mr-2" />
+        <div className="flex items-center text-sm font-medium bg-green-100 p-2 rounded-md">
+          <Calendar className="w-4 h-4 mr-2 text-black" />
           <span className="text-black">{currentDevotional.date}</span>
         </div>
 
@@ -53,30 +53,11 @@ const DevocionalReader: React.FC = () => {
             {currentDevotional.title}
           </h4>
 
-          <div className="bg-green-200 border-l-4 border-green-500 p-3 mb-3 rounded-r-lg">
-            <p className="text-green-800 font-medium text-center italic">
-              "{currentDevotional.text.split("\n")[0]}"
-            </p>
-            <p className="text-green-600 text-xs md:text-sm text-center mt-1">
-              - {currentDevotional.bibleVerse}
+          <div className="bg-green-100 border-l-4 border-green-500 p-3 mb-3 rounded-r-lg">
+            <p className="text-black font-medium text-justify">
+              {currentDevotional.text}
             </p>
           </div>
-
-          {currentDevotional.text.split("\n").length > 1 && (
-            <div className="space-y-2 text-black text-sm leading-relaxed max-h-64 overflow-y-auto pr-2 bg-white p-3 rounded-md">
-              {currentDevotional.text
-                .split("\n")
-                .slice(1)
-                .map(
-                  (paragraph, index) =>
-                    paragraph.trim() && (
-                      <p key={index} className="text-justify">
-                        {paragraph.trim()}
-                      </p>
-                    )
-                )}
-            </div>
-          )}
 
           {currentDevotional.author && (
             <div className="mt-3 pt-3 border-t border-gray-200">
