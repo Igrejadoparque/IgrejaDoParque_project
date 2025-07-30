@@ -19,15 +19,17 @@ const DevocionalReader: React.FC = () => {
   if (!currentDevotional) {
     return (
       <div className="text-center p-8">
-        <p className="text-gray-600">Nenhuma devocional disponível no momento.</p>
+        <p className="text-gray-600">
+          Nenhuma devocional disponível no momento.
+        </p>
       </div>
     );
   }
 
   return (
     <div className="p-4 md:p-6 lg:p-8">
-      <div className="flex items-center justify-between mb-4">
-        <h3 className="text-xl md:text-2xl font-bold text-green-800 flex items-center">
+      <div className="flex items-center justify-between mb-4 bg-white p-2 rounded-md">
+        <h3 className="text-xl md:text-2xl font-bold text-black flex items-center">
           <Book className="w-5 h-5 md:w-6 md:h-6 mr-2" />
           Devocional Diário
         </h3>
@@ -41,17 +43,17 @@ const DevocionalReader: React.FC = () => {
       </div>
 
       <div className="space-y-4">
-        <div className="flex items-center text-sm text-green-600 font-medium">
+        <div className="flex items-center text-sm font-medium bg-green-200 p-2 rounded-md">
           <Calendar className="w-4 h-4 mr-2" />
-          {currentDevotional.date}
+          <span className="text-black">{currentDevotional.date}</span>
         </div>
 
         <div>
           <h4 className="text-lg md:text-xl font-bold text-gray-800 mb-2">
             {currentDevotional.title}
           </h4>
-          
-          <div className="bg-green-50 border-l-4 border-green-500 p-3 mb-3 rounded-r-lg">
+
+          <div className="bg-green-200 border-l-4 border-green-500 p-3 mb-3 rounded-r-lg">
             <p className="text-green-800 font-medium text-center italic">
               "{currentDevotional.text.split("\n")[0]}"
             </p>
@@ -61,14 +63,18 @@ const DevocionalReader: React.FC = () => {
           </div>
 
           {currentDevotional.text.split("\n").length > 1 && (
-            <div className="space-y-2 text-gray-700 text-sm leading-relaxed max-h-64 overflow-y-auto pr-2">
-              {currentDevotional.text.split("\n").slice(1).map((paragraph, index) => (
-                paragraph.trim() && (
-                  <p key={index} className="text-justify">
-                    {paragraph.trim()}
-                  </p>
-                )
-              ))}
+            <div className="space-y-2 text-black text-sm leading-relaxed max-h-64 overflow-y-auto pr-2 bg-white p-3 rounded-md">
+              {currentDevotional.text
+                .split("\n")
+                .slice(1)
+                .map(
+                  (paragraph, index) =>
+                    paragraph.trim() && (
+                      <p key={index} className="text-justify">
+                        {paragraph.trim()}
+                      </p>
+                    )
+                )}
             </div>
           )}
 
@@ -84,7 +90,8 @@ const DevocionalReader: React.FC = () => {
 
         <div className="text-center mt-4">
           <p className="text-xs text-green-600 italic">
-            "A sabedoria consiste em conhecer o Senhor e aplicar seus princípios em nossa vida."
+            "A sabedoria consiste em conhecer o Senhor e aplicar seus princípios
+            em nossa vida."
           </p>
         </div>
       </div>
@@ -93,4 +100,3 @@ const DevocionalReader: React.FC = () => {
 };
 
 export default DevocionalReader;
-
