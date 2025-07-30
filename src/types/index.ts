@@ -1,0 +1,1 @@
+export type ActivePage = "inicio" | "lideranca" | "sobre" | "publicacoes" | "eventos" | "contato" | "departamentos" | "culto-ao-vivo" | "webtv";
